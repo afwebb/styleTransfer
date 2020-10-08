@@ -299,7 +299,7 @@ def run_style_transfer(content_path,
                     'content loss: {:.4e}, '
                     'time: {:.4f}s'.format(loss, style_score, content_score, time.time() - start_time))
     print('Total time: {:.4f}s'.format(time.time() - global_start))
-    IPython.display.clear_output(wait=True)
+    #IPython.display.clear_output(wait=True)
     plt.figure(figsize=(14,4))
     for i,img in enumerate(imgs):
         plt.subplot(num_rows,num_cols,i+1)
@@ -317,6 +317,7 @@ best, best_loss = run_style_transfer(content_path,
 
 plt.figure()
 imshow(best)
+plt.axis("off")
 plt.savefig(f'results/{output_path}_best.jpg')
 
 def show_results(best_img, content_path, style_path, show_large_final = True):
