@@ -224,8 +224,8 @@ def compute_grads(cfg):
 
 def run_style_transfer(content_path,
                         style_path,
-                        num_iterations=1000,
-                        content_weight=1e3,
+                        num_iterations=2000,
+                        content_weight=1e4,
                         style_weight=1e-2):
     # We don't need to (or want to) train any layers of our model, so we set their
     # trainable to false. 
@@ -313,7 +313,7 @@ def run_style_transfer(content_path,
 
 #Run the script
 best, best_loss = run_style_transfer(content_path, 
-                                     style_path, num_iterations=1000)
+                                     style_path, num_iterations=1500)
 
 plt.figure()
 imshow(best)
